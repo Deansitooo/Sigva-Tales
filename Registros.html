@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Grimorio Viviente - Biblioteca de Registros</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+<style>
+body {
+    margin:0;
+    padding:0;
+    font-family:'Georgia', serif;
+    background:#111;
+    color:#f5e6c4;
+}
+
+/* Contenedor tipo biblioteca */
+.container {
+    width:100%;
+    min-height:100vh;
+    padding:50px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    justify-items:center; /* centra los registros horizontalmente */
+    gap:30px;
+    box-sizing:border-box;
+}
+
+/* Estilo para cada "libro/registro" con fondo individual */
+.registro {
+    background-image: url('img/pexels-danielabsi-952670.jpg');
+    background-size: cover;
+    background-position: center;
+    border:3px solid #6b4f2a;
+    border-radius:10px;
+    padding:25px 20px;
+    text-align:center;
+    cursor:pointer;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 20px rgba(255,215,120,0.2);
+    font-family:'Uncial Antiqua', serif;
+    height:250px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:#f5e6c4;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.registro:hover {
+    transform: scale(1.08) rotate(-1deg);
+    box-shadow: 0 0 50px rgba(255,215,120,0.5);
+}
+
+/* Texto dentro de libro */
+.registro h2 {
+    font-size:1.6rem;
+    margin-bottom:10px;
+    letter-spacing:1px;
+    background: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    border-radius:5px;
+}
+
+.registro p {
+    font-size:1rem;
+    line-height:1.4;
+    background: rgba(0,0,0,0.4);
+    padding: 3px 8px;
+    border-radius:5px;
+}
+
+/* Modal */
+.modal-bg {
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.95);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.modal-content {
+    background:#1a0f00;
+    padding:40px;
+    border:3px solid #6b4f2a;
+    border-radius:15px;
+    width:90%;
+    max-width:800px;
+    max-height:80vh;
+    overflow-y:auto;
+    text-align:left;
+    box-shadow: 0 0 50px rgba(255,215,120,0.6);
+    background-image: url('img/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.modal-content h2 {
+    text-align:center;
+    margin-bottom:20px;
+    font-family:'Cinzel', serif;
+    font-size:2rem;
+    color:#f5e6c4;
+    text-shadow: 2px 2px 8px #000;
+}
+
+/* Botones */
+.close-btn, .back-btn {
+    background:#6b4f2a;
+    color:#f5e6c4;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:20px;
+    font-weight:bold;
+}
+
+.close-btn:hover, .back-btn:hover {
+    background:#8a673b;
+}
+
+/* Botón regresar Grimorio fijo abajo derecha */
+.back-btn {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:1100;
+    font-size:1rem;
+}
+
+/* Responsivo: móviles */
+@media (max-width:768px){
+    .container{
+        padding:20px;
+        grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    }
+    .registro{
+        height:200px;
+        padding:20px 15px;
+    }
+    .modal-content{
+        padding:25px;
+        max-height:90vh;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="registro" onclick="abrirRegistro('registro1')">
+        <h2>Fragmento Ilegible</h2>
+        <p>El nivel crítico de sujetos y Neuroplasma.</p>
+    </div>
+    <div class="registro" onclick="abrirRegistro('registro2')">
+        <h2>Archivo Dañado</h2>
+        <p>Registro de Morgue 0-14: materia orgánica en descomposición.</p>
+    </div>
+    <div class="registro" onclick="abrirRegistro('registro3')">
+        <h2>Diario Enfermera Sarah L.</h2>
+        <p>Observaciones en el Sector de Incubación tras la incursión de los mutantes.</p>
+    </div>
+    <div class="registro" onclick="abrirRegistro('registro4')">
+        <h2>Transmisión de Audio</h2>
+        <p>Puente de Mando - Laboratorio Génesis, voces y sonidos críticos.</p>
+    </div>
+    <div class="registro" onclick="abrirRegistro('registro5')">
+        <h2>Informe Gestante 0-A</h2>
+        <p>Extracción y observaciones de la Sra. Blackwood.</p>
+    </div>
+    <div class="registro" onclick="abrirRegistro('registro6')">
+        <h2>Nota de Suicidio / Bitácora</h2>
+        <p>Fragmento Dr. ████ sobre la "Madre de Pared".</p>
+    </div>
+    <div class="registro" onclick="abrirRegistro('registro7')">
+        <h2>Registro de Alimentación</h2>
+        <p>Observaciones del Mutante 03 y la Santa Trinidad.</p>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-bg" id="modal">
+    <div class="modal-content" id="modal-content">
+        <h2 id="modal-title"></h2>
+        <p id="modal-text" style="white-space: pre-wrap;"></p>
+        <button class="close-btn" onclick="cerrarModal()">Cerrar</button>
+    </div>
+</div>
+
+<button class="back-btn" onclick="window.location.href='grimorio.html'">← Volver al Grimorio</button>
+
+<script>
+const registros = {
+    registro1: {
+        titulo: "Fragmento Ilegible",
+        texto: `​El nivel de █░░▒▓▓ es crítico. Se ha detectado que el sujeto █░░ tiene una respuesta neuronal de ▓▓▓ milisegundos. El Dr. L ha ordenado la ▒▒▒▒▒▒ total de los registros anteriores para evitar que el ░░░░░░ se filtre fuera del búnker. No son humanos. Son █▓▒░.
+
+— Sigvayu Pranasig, Clara █▒░░▓█ y un mutante más... la Santa Trinidad había nacido.
+
+Eran mutantes adaptados al Neuroplasma con una capacidad de razonamiento aterradora. Recién nacidos, sus ojos ya procesaban información a una velocidad que ningún adulto en la Tierra Omega podría alcanzar. El experimento de clonación había funcionado, pero a un precio que ▒▒▒▒▒▒▒▒ no estaba dispuesto a pagar.`
+    },
+    registro2: {
+        titulo: "Archivo Dañado: Registro de Morgue 0-14",
+        texto: `Sujeto: [IDENTIDAD BORRADA]
+Estado: Materia orgánica en descomposición
+
+Las paredes están sudando ese líquido negro. Ya no es solo el Neuroplasma, es... algo que sale de sus poros. Hoy encontré al Dr. █▒░░ en el pasillo. No podía gritar porque su mandíbula había sido ▓▓▓▓▓▓ y cosida con su propio sistema nervioso. Estaba vivo. Sus ojos pedían que le pegara un tiro, pero mis manos no me obedecían.
+
+Clara █▒░░▓█ estaba sentada a su lado, jugando con los ░░▒█ internos del doctor como si fueran hilos de seda. Me sonrió con esos dientes que aún no deberían existir. El suelo está pegajoso. No es agua. Es █▓▒░ fresca que gotea del techo. ████ ha empezado a comerse sus propios dedos para no gritar. El hambre de la Trinidad no es de comida... es de ▓▓▓▓ biológica.`
+    },
+    registro3: {
+        titulo: "Diario Enfermera Sarah L.",
+        texto: `Ubicación: Sector de Incubación (Sello de Seguridad Roto)
+
+Hay trozos de █▒░ pegados en los monitores. Alguien... o algo... pasó por aquí y simplemente deshizo a los guardias. No los mató, los ▓▓▓▒░. Sus cuerpos están fusionados con las tuberías, formando una masa de carne que aún ░░░░.
+
+He visto al tercero. El que el Dr. L oculta. No tiene piel. Es un amasijo de músculos expuestos y █▓▒░ que late al ritmo del búnker. Cuando me miró, sentí un pinchazo en mi nuca. Siento que algo se mueve bajo mi piel. Me estoy convirtiendo en █▒░░. El Dr. L ríe en la habitación de al lado mientras se corta ▓▓▓▓ con un bisturí oxidado. Dice que la Santa Trinidad tiene hambre de nosotros.`
+    },
+    registro4: {
+        titulo: "Transmisión de Audio",
+        texto: `[Sonido de succión húmeda]
+
+— Voz Masculina (Dr. L?): "Míralos... son hermosos. Sigvayu ha aprendido a ▓▓▓▓ la realidad. Clara ha █▒░░ a los cirujanos. Y el tercero... el tercero es el █▓▒░ definitivo."
+
+[Gritos desgarradores en segundo plano]
+
+— Voz Masculina: "No cierres los ojos. Mira cómo la █▓▒░ salpica el cristal. Es el bautismo de la Nueva Tierra Omega. La Trinidad no necesita úteros... solo necesita recipientes."
+
+[Sonido de huesos rompiéndose uno a uno]
+— Voz Susurrante: "Padre... ░░▒█... tengo █▓▒░."
+
+[FIN DE LA TRANSMISIÓN - SEÑAL PERDIDA POR INTERFERENCIA ORGÁNICA]`
+    },
+    registro5: {
+        titulo: "Informe Gestante 0-A",
+        texto: `Sujeto: Sra. Blackwood (Gestante 0-A)
+
+Estado: █░░▒ DESECHADA
+
+El operativo en la ciudad natal fue un éxito de limpieza. Los "seres sin rostro" no dejaron testigos varones. El Sr. Blackwood intentó interponerse; su caja torácica fue ▓▓▓▓▓▓ y sus restos esparcidos por el jardín de la residencia costera para marcar el territorio.
+
+La mujer fue trasladada al Laboratorio Génesis en estado de shock catatónico. El Dr. L estaba fascinado por la pureza de su linaje. No se utilizó anestesia durante la extracción del embrión; el Dr. sostenía que el terror materno actuaba como un catalizador químico necesario para el Neuroplasma.
+
+La Sra. Blackwood sobrevivió a la cirugía de vacío solo para ser utilizada como █▒░░ orgánica para los cultivos de tejido de Clara █▒░░▓█.`
+    },
+    registro6: {
+        titulo: "Nota de Suicidio / Bitácora",
+        texto: `Fecha: [FECHA BORRADA CON SANGRE]
+
+He visto lo que queda de ella en el Sector 4. Ya no es una mujer. La han convertido en una "Madre de Pared". Sus extremidades han sido ▓▓▓▓ e integradas en el sistema de tuberías que alimenta la incubadora de la Trinidad.
+
+Lo más horrible no es que esté viva, sino que Clara la reconoce. A veces, la niña se acerca al amasijo de carne que antes era su madre y le susurra cosas. He visto a la pared de carne █▓▒░ llorar sangre cuando la niña le toca lo que queda de sus mejillas. El Dr. L dice que es un "vínculo residual". Yo digo que es una █▒░░ de proporciones cósmicas.`
+    },
+    registro7: {
+        titulo: "Registro de Alimentación - La Santa Trinidad",
+        texto: `Observación: Sujeto 03 (El Mutante Misterioso)
+
+El tercer mutante ha mostrado una preferencia por los restos genéticos del Sr. Blackwood que trajimos en los contenedores criogénicos. No se los come de forma normal. Él ░░░░░░ la biomasa de su padre a través de los poros.
+
+Ayer, el mutante tomó la forma del Sr. Blackwood frente a la "Madre de Pared". Fue una escena que me hizo ▓▓▓▓ hasta quedar vacío. El amasijo de carne empezó a convulsionar rítmicamente. La Trinidad no solo usa sus cuerpos; está usando sus recuerdos para torturar a la materia viva. La habitación se llenó de un olor a █▒░ podrida y flores de loto.`
+    }
+};
+
+function abrirRegistro(id){
+    const registro = registros[id];
+    document.getElementById('modal-title').innerText = registro.titulo;
+    document.getElementById('modal-text').innerText = registro.texto;
+    document.getElementById('modal').style.display = 'flex';
+}
+
+function cerrarModal(){
+    document.getElementById('modal').style.display = 'none';
+}
+</script>
+
+</body>
+</html>

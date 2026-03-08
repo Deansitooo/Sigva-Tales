@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Grimorio Viviente - Historia</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family:Georgia, serif;
+    background:#111;
+    color:#f5e6c4;
+    overflow-x:hidden;
+    position:relative;
+}
+
+#FondoGIF{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:url('https://wallpapercave.com/wp/wp1998751.jpg') no-repeat center center fixed;
+    background-size:cover;
+    z-index:-1;
+}
+
+.container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;  /* Centra horizontalmente en PC */
+    align-items:flex-start;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+/* SOLO PARA MÓVIL */
+@media (max-width: 768px) {
+    .container{
+        flex-direction: column; /* Apila páginas verticalmente */
+        align-items: center;    /* Centra horizontalmente en móvil */
+    }
+}
+
+.historia-page{
+    background:rgba(20,10,0,0.85);
+    border:4px solid #6b4f2a;
+    border-radius:15px;
+    padding:50px;
+    width:90%;
+    max-width:1100px;
+    margin:20px;
+    box-shadow:0 0 70px rgba(0,0,0,0.8);
+    display:none;
+    flex-direction:column;
+    opacity:0;
+    transform:translateY(20px);
+    transition:all 0.8s ease;
+}
+
+.historia-page.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.titulo-capitulo{
+    font-family:'Uncial Antiqua', serif;
+    font-size:2.5rem;
+    text-align:center;
+    margin-bottom:25px;
+    letter-spacing:2px;
+    color:#e6c88c;
+    text-shadow:
+        0 0 5px #e6c88c,
+        0 0 10px #cfa85c,
+        0 0 20px rgba(255,200,120,0.4);
+}
+
+p{
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+button{
+    background:#6b4f2a;
+    color:#f5e6c4;
+    border:none;
+    padding:12px 25px;
+    margin:5px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:1rem;
+}
+
+button:hover{
+    background:#8a673b;
+}
+
+.nav-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="FondoGIF"></div>
+
+<div class="container">
+
+<!-- PAGINA 1 -->
+<div class="historia-page" id="historia1">
+<div class="titulo-capitulo">Laboratorio de Experimentación — Prólogo</div>
+<p>
+En el Londres del siglo XVII, dentro del universo de Tierra Omega, vivía un matrimonio que desbordaba felicidad. Se instalaron en una casa pequeña pero acogedora justo al lado de la zona costera del centro, donde la brisa del mar entraba constantemente por las ventanas y el sonido de las olas acompañaba las noches tranquilas. Ella estaba embarazada de su primer hijo y la emoción se notaba en cada rincón del hogar. Como sabían que era un momento único en sus vidas, los Blackwood decidieron hacer algo especial y emprender su primer gran viaje juntos. El destino era la India, la tierra natal de la mujer. Querían que su hijo naciera allí, rodeado de sus raíces, su cultura y su familia, así que prepararon todo para cruzar el océano y tener el parto en la ciudad donde ella había crecido.
+</p>
+<div class="nav-buttons">
+<button onclick="showHistoria('historia2')">→ Página siguiente</button>
+<button onclick="window.location.href='grimorio.html'">← Volver</button>
+</div>
+</div>
+
+<!-- PAGINA 2 -->
+<div class="historia-page" id="historia2">
+<div class="titulo-capitulo">El Incidente Alfa-01</div>
+<p>
+Este fue el primer caso registrado de explotación femenina relacionado con el Laboratorio G. Todo comenzó con una serie de secuestros que parecían completamente aleatorios por toda la India. Extraños seres sin rostro y fuertemente armados aparecían de la nada, asesinaban a cualquiera que intentara interponerse y se llevaban únicamente a las mujeres embarazadas. Durante meses nadie supo a dónde eran llevadas ni cuál era el motivo detrás de aquellos ataques. Las autoridades nunca lograron encontrar pistas claras y el fenómeno se convirtió en un misterio aterrador que comenzó a extenderse como un rumor oscuro entre las comunidades. Cuando finalmente se contabilizaron las víctimas, las cifras fueron estremecedoras: 288 hombres asesinados y exactamente 288 mujeres embarazadas secuestradas. Ninguna de ellas volvió a ser vista.
+</p>
+<div class="nav-buttons">
+<button onclick="showHistoria('historia1')">← Anterior</button>
+<button onclick="showHistoria('historia3')">→ Siguiente</button>
+</div>
+</div>
+
+<!-- PAGINA 3 -->
+<div class="historia-page" id="historia3">
+<div class="titulo-capitulo">Laboratorio Génesis — Acto I</div>
+<p>
+En la zona más remota del océano, en un punto sin ubicación clara ni profundidad conocida, se ocultaba un búnker inmenso, casi del tamaño de un país mediano. Ese lugar era conocido como el Laboratorio Génesis. Bajo el mando del Doctor L, aquel complejo tenía un único objetivo: crear el clon perfecto del propio doctor, un heredero biológico que superara cualquier limitación humana. Para lograrlo, cientos de mujeres fueron utilizadas como material de experimentación. Sus embriones prematuros eran extraídos y modificados con combinaciones específicas de genes con la intención de crear metahumanos capaces de sobrevivir a condiciones extremas. Los resultados eran brutales. La gran mayoría de los embriones, aproximadamente un 87.5%, moría a las pocas horas o semanas. Solo el 13.5% lograba sobrevivir el tiempo suficiente para continuar con las pruebas. Aquellos pocos supervivientes eran sometidos a entrenamientos severos, dietas estrictas y un adoctrinamiento psicológico diseñado para convertirlos en armas vivientes.
+</p>
+<div class="nav-buttons">
+<button onclick="showHistoria('historia2')">← Anterior</button>
+<button onclick="showHistoria('historia4')">→ Siguiente</button>
+</div>
+</div>
+
+<!-- PAGINA 4 -->
+<div class="historia-page" id="historia4">
+<div class="titulo-capitulo">Proyecto G.E.N.E.S.I.S</div>
+<p>
+El Proyecto G.E.N.E.S.I.S no era un experimento común. Era una anomalía científica tan cruel que incluso algunos de los médicos más fríos del laboratorio no podían soportar presenciarlo. El objetivo era crear una superposición neuronal que permitiera que los sujetos desarrollaran una capacidad mental muy superior a la de cualquier humano normal. Para lograrlo se utilizaba una sustancia conocida como Neuroplasma, un líquido experimental diseñado para acelerar y mutar las neuronas a niveles extremos. El proceso provocaba un dolor insoportable en los pacientes y en la mayoría de los casos terminaba con una explosión cerebral o con la destrucción completa del sistema nervioso. Durante años se realizaron cientos de pruebas con embriones de diferentes orígenes y razas biológicas para observar cómo reaccionaban ante la sustancia. Curiosamente, cada tipo genético respondía de forma distinta al Neuroplasma.
+</p>
+<div class="nav-buttons">
+<button onclick="showHistoria('historia3')">← Anterior</button>
+<button onclick="showHistoria('historia5')">→ Siguiente</button>
+</div>
+</div>
+
+<!-- PAGINA 5 -->
+<div class="historia-page" id="historia5">
+<div class="titulo-capitulo">La Constelación</div>
+<p>
+Después de miles de intentos fallidos, el Neuroplasma solo funcionó correctamente en doce individuos. Ese grupo selecto fue conocido como “La Constelación”. Cada uno de ellos había logrado que el Neuroplasma mutara sus genes de una forma única, generando habilidades y anomalías diferentes. Sin embargo, incluso entre estos elegidos las consecuencias fueron devastadoras. Las mutaciones comenzaron a degradar lentamente sus cuerpos y sus mentes. Algunos sufrieron colapsos neuronales irreversibles, otros desarrollaron episodios de locura extrema que terminaron en violencia. Entre asesinatos internos, suicidios atroces y fallos biológicos catastróficos, el grupo comenzó a desaparecer uno por uno hasta quedar reducido a unos pocos supervivientes.
+</p>
+<div class="nav-buttons">
+<button onclick="showHistoria('historia4')">← Anterior</button>
+<button onclick="showHistoria('historia6')">→ Siguiente</button>
+</div>
+</div>
+
+<!-- PAGINA 6 -->
+<div class="historia-page" id="historia6">
+<div class="titulo-capitulo">Nacimiento de Sigva</div>
+<p>
+Tras la destrucción de La Constelación, el Doctor L llegó a una conclusión inquietante. El Neuroplasma no funcionaba correctamente en organismos con genes completamente desarrollados. Las mutaciones generaban inestabilidad irreversible. Sin embargo, el doctor encontró una posible solución en la clonación sintética. Combinando diferentes genomas, creó tres embriones completamente artificiales y los mantuvo en incubadoras biomecánicas que simulaban un útero humano. Aquellos embriones serían el comienzo de un nuevo experimento que superaría todo lo intentado anteriormente y que acabaría dando origen a una de las entidades más peligrosas jamás creadas dentro del laboratorio.
+</p>
+<div class="nav-buttons">
+<button onclick="showHistoria('historia5')">← Anterior</button>
+<button onclick="window.location.href='grimorio.html'">← Volver al Grimorio</button>
+</div>
+</div>
+
+</div>
+
+<script>
+function showHistoria(id){
+    const pages=document.querySelectorAll('.historia-page');
+    pages.forEach(p=>{
+        p.style.display='none';
+        p.classList.remove("visible");
+    });
+    const page=document.getElementById(id);
+    page.style.display='flex';
+    setTimeout(()=>{
+        page.classList.add("visible");
+    },50);
+}
+
+window.onload=function(){
+    showHistoria('historia1');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Archivo Alfa - Proyecto S</title>
+
+<!-- Fuente imponente para h1 -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin:0;
+    padding:0;
+    font-family: 'Georgia', serif;
+    background:#111;
+    color:#f5e6c4;
+    overflow-x:hidden;
+}
+
+/* Contenedor principal */
+.container {
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+/* Página estilo Grimorio + Wikipedia */
+.page {
+    background: rgba(20,10,0,0.85);
+    border:4px solid #6b4f2a;
+    border-radius:15px;
+    padding:50px;
+    width:90%;
+    max-width:1400px;
+    box-shadow: 0 0 100px rgba(0,0,0,0.8);
+}
+
+/* Títulos estilo Wikipedia */
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #ff6f00;
+    text-shadow: 
+        2px 2px 4px #000,
+        4px 4px 10px rgba(255,111,0,0.4),
+        0 0 20px rgba(255,111,0,0.3);
+}
+h2 { font-size:2.2rem; margin-top:50px; margin-bottom:15px; border-bottom:1px solid #6b4f2a; padding-bottom:8px; }
+h3 { font-size:1.7rem; margin-top:40px; margin-bottom:10px; }
+h4 { font-size:1.3rem; margin-top:30px; margin-bottom:8px; }
+
+/* Texto tipo párrafo Wikipedia */
+p { font-size:1.15rem; line-height:1.7; text-align:justify; margin-bottom:20px; }
+
+/* Imágenes estilo Wikipedia */
+img.content-img { border-radius:10px; display:block; margin:20px auto; max-width:60%; height:auto; }
+
+/* Listas y sublistas */
+ul, ol { margin-left:40px; margin-bottom:20px; }
+
+/* Citas y notas */
+blockquote {
+    border-left: 4px solid #6b4f2a;
+    padding-left: 15px;
+    margin-left:0;
+    margin-right:0;
+    color:#d5c5a4;
+    font-style: italic;
+    background: rgba(0,0,0,0.2);
+}
+
+/* Referencias y notas */
+.references {
+    font-size:0.9rem;
+    color:#c5c5c5;
+    margin-top:20px;
+    border-top:1px solid #6b4f2a;
+    padding-top:10px;
+}
+
+/* Botón volver al Grimorio */
+.icon-button {
+    display:flex;
+    align-items:center;
+    background: rgba(107,79,42,0.9);
+    padding:10px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    color:#f5e6c4;
+    font-weight:bold;
+    font-size:1.1rem;
+    transition: all 0.2s ease;
+    margin-top:40px;
+}
+.icon-button img {
+    width:35px;
+    height:35px;
+    margin-right:10px;
+}
+.icon-button:hover {
+    background: rgba(138,103,59,0.95);
+}
+
+/* Tabla de ejemplos */
+table { width:100%; border-collapse: collapse; margin:25px 0; }
+table, th, td { border:1px solid #6b4f2a; }
+th, td { padding:10px; text-align:left; }
+th { background: rgba(107,79,42,0.8); }
+
+/* Enlaces internos estilo Grimorio */
+a { color:#f5e6c4; text-decoration: underline; }
+a:hover { color:#ff4444; }
+
+/* ===========================
+   MEDIA QUERIES PARA MÓVIL
+   =========================== */
+@media (max-width: 768px) {
+    .page {
+        padding:20px;
+        width:95%;
+        box-shadow: 0 0 50px rgba(0,0,0,0.7);
+    }
+    h1 { font-size:2.5rem; margin-bottom:25px; letter-spacing:0.15em; }
+    h2 { font-size:1.6rem; margin-top:30px; margin-bottom:10px; }
+    h3 { font-size:1.3rem; margin-top:25px; margin-bottom:8px; }
+    h4 { font-size:1.1rem; margin-top:20px; margin-bottom:5px; }
+    p { font-size:1rem; line-height:1.4; text-align:justify; }
+    img.content-img { max-width:90%; margin:15px auto; }
+    ul, ol { margin-left:20px; font-size:0.95rem; }
+    blockquote { font-size:0.95rem; padding-left:10px; }
+    .icon-button { font-size:1rem; padding:8px 15px; }
+    .icon-button img { width:30px; height:30px; margin-right:5px; }
+    table { font-size:0.85rem; }
+    th, td { padding:6px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="page">
+
+<h1>Experimento G.E.N.E.S.I.S</h1>
+
+<p>
+Les hago una pregunta: ¿Cuál es el verdadero límite humano al experimentar? ¿Hasta dónde puede llegar nuestra moral antes de romperse en pedazos? Cuando hablamos de experimentación oscura, no me refiero a pruebas inocuas: hablo de tortura pura, de seres convertidos en simples cobayas, donde la mayoría muere bajo el peso de la crueldad o, en el mejor de los casos, sucumbe rápidamente al dolor más absoluto.
+</p>
+<p>
+Cada persona tiene un genoma distinto, cada célula una historia propia, ningún cuerpo es igual a otro. Y sin embargo, bajo la lente de la experimentación, dejamos de ser humanos. Nos convertimos en objetos, en animales de laboratorio. El límite no es científico, no es físico: el límite es la humanidad misma. Ser humano o no serlo. Ese es el verdadero precio de mirar demasiado profundo en lo que somos capaces de hacer.
+</p>
+
+<h2>1. Registro Sigvayu</h2>
+<p>Se conoce al Registro Sigvayu como uno de los casos de experimentación más extraños, desconocidos y retorcidos de los márgenes del mundo normal. También llamado Registro S, se trató de un experimento químico de mezcla genética entre especies que, en condiciones naturales, no podrían reproducirse entre sí.</p>
+<p>Para llevarlo a cabo, se necesitaba un embrión: primero asesinaban a la madre sin anestesia para extraerlo, luego inyectaban la mezcla de genomas y finalmente lo incubaban en “La Soñadora”, una incubadora especial diseñada para brindar a los embriones vida suficiente, simulando la función de una madre biomecánica.</p>
+
+<h3>1.1 Primeros Intentos</h3>
+<ul>
+    <li><strong>Dr. K</strong> y el espécimen de oro: hibridación entre humano y cabra; resultado letal inmediato.</li>
+    <li><strong>Dr. L</strong> y el espécimen nocturno: combinación entre humano y murciélago; fallecimiento por inanición y fallo fisiológico.</li>
+    <li>Intentos de clonación genética por <strong>Dr. K</strong>: todos fallidos, generando aberraciones inviables.</li>
+</ul>
+
+<h3>1.2 Pruebas Alfa</h3>
+<p>Las <strong>Pruebas Alfa</strong> correspondieron a ensayos técnicamente viables, pero que dejaron secuelas físicas y éticas irreversibles.</p>
+<ul>
+    <li>Clonación genética parcial de <strong>Dr. K</strong>: resultado aberrante y altamente agresivo; incidente mortal que causó la muerte de 17 investigadores. Todos los restos fueron incinerados y el laboratorio desinfectado químicamente.</li>
+    <li>Fusión de ADN inter-especies mediante métodos alquímicos y biocatalíticos: el espécimen mostró funcionalidad biológica, pero escapó del sistema de contención, provocando rastros de contaminación genética.</li>
+    <li>Desarrollo de organismos híbridos con capacidades físicas y sensoriales extraordinarias, o deformidades cuidadosamente inducidas: funcionales, sin rastro del paradero de los especímenes; considerados de nivel de riesgo biológico extremo.</li>
+</ul>
+
+<blockquote>"Cada vida truncada es un paso hacia la creación definitiva; el Experimento Génesis no acepta debilidades." – Dr. L, Registro Escrito.</blockquote>
+
+<h2>2. Neuroplasma</h2>
+<p>De estas investigaciones surge el <strong>Neuroplasma</strong>, una alteración genética diseñada para modificar las neuronas, potenciando su capacidad funcional, velocidad de procesamiento y desarrollo cognitivo acelerado.</p>
+<p>Permitía, por ejemplo, que un infante de 1 año desarrollara habilidades avanzadas, un niño de 3 años adquiriera capacidades de cálculo y análisis de frases complejas, y que un sujeto de 7 años resolviera ecuaciones comparables a las de un adulto de 40 años.</p>
+<p>Su uso no estaba exento de riesgos, generando inestabilidad neuronal, sobrecarga cognitiva y alteraciones permanentes en el desarrollo natural del cerebro.</p>
+
+<h3>2.1 Efectos Primates</h3>
+<ul>
+    <li>Hipertermia cerebral extrema, riesgo de hemorragias internas.</li>
+    <li>Deformaciones craneales permanentes.</li>
+    <li>Insuficiencia cerebral total, convulsiones y colapso irreversible del sistema nervioso central.</li>
+    <li>Alteraciones conductuales extremas.</li>
+    <li>Mutaciones neuronales letales, sin posibilidad de reversión.</li>
+</ul>
+
+<h3>2.2 Crónicas Avanzadas</h3>
+<ul>
+    <li>Desarrollo de mecanismos de autoregulación cerebral.</li>
+    <li>Mutaciones neuronales progresivas, facilitando la amplificación del Neuroplasma.</li>
+    <li>Manipulación neurológica para inducir estados de sueño profundo, optimizando la estabilidad genética.</li>
+</ul>
+
+<img src="img/44304f02-f5ad-44c0-970f-3bdf7019668f.png" alt="Laboratorio de Genética Oscura" class="content-img">
+
+<h2>3. Experimento G.E.N.E.S.I.S</h2>
+<h3>3.1 Sigvayu Pranasig</h3>
+<ul>
+    <li>Adaptación completa al Neuroplasma.</li>
+    <li>Escape de laboratorio, paradero desconocido.</li>
+    <li>Capacidad mágica rango ████████.</li>
+</ul>
+
+<h3>3.2 Clara ████████</h3>
+<ul>
+    <li>Fototropismo ████, resistencia ████████.</li>
+    <li>Híbridos ███ ADN ████, rasgos ███████.</li>
+    <li>Especies ████, adaptaciones ███ fórmulas █████.</li>
+    <li>Mutaciones ████ observadas ██ condiciones █████.</li>
+    <li>Interacciones ████ biológicas ███████ impredecibles.</li>
+</ul>
+<p>Cuidado: █████████ ████ contenido ████████, acceso sin █████ puede comprometer ████████.</p>
+
+<h3>3.3 Tablas de Especímenes</h3>
+<table>
+<tr>
+<th>Experimento</th>
+<th>Genoma A</th>
+<th>Genoma B</th>
+</tr>
+<tr>
+<td><strong>Sigvayu Pranasig</strong></td>
+<td>Zahr</td>
+<td>████████ (Clasificado)</td>
+</tr>
+<tr>
+<td><strong>Clara</strong></td>
+<td>Especie animal no identificada</td>
+<td>Acceso restringido / Alta protección</td>
+</tr>
+<tr>
+<td><strong>GEN. S.C</strong></td>
+<td>████████ (Secreto de Nivel Alfa)</td>
+<td>Prohibido su lectura</td>
+</tr>
+</table>
+<p><em>Nota:</em> Genomas bloqueados y clasificados representan material de riesgo biológico extremo.</p>
+
+<h2>4. Notas y Referencias</h2>
+<div class="references">
+1. Draven, M. <i>Tratado sobre Hibridación Prohibida de Especies</i>.<br>
+2. Voss, T.H. <i>Teoría Críptica de la Herencia Oscura</i>.<br>
+3. Grimorio Viviente, Sección de Genética Experimental Extrema.<br>
+4. Laboratorio Arcanum, Estudios sobre CRISPR y Mutaciones Híbridas No Reguladas.<br>
+5. Manuscritos de Alquimia Genética y Transmutación de Vida, Grimorio Antiguo de Necrópolis, siglo XVIII.<br>
+6. Lykos, D. <i>Registro Secreto de Neuroplasma y Potenciación Cognitiva</i>.<br>
+7. Observatorios de Contención Biológica, Informe de Riesgo Genético Prohibido.
+</div>
+
+<a href="grimorio.html" class="icon-button">
+    <img src="img/book2.gif" alt="Volver">
+    Volver al Grimorio
+</a>
+
+</div>
+</div>
+
+</body>
+</html>
