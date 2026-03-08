@@ -14,7 +14,6 @@ body {
     position:relative;
 }
 
-/* GIF de fondo fijo */
 #FondoGIF {
     position:fixed;
     top:0;
@@ -26,7 +25,6 @@ body {
     z-index:-1;
 }
 
-/* Contenedor de la sección */
 .container {
     width:100%;
     min-height:100vh;
@@ -37,7 +35,6 @@ body {
     box-sizing:border-box;
 }
 
-/* Página Grimorio ajustada para ocupar más espacio */
 .page {
     background: rgba(20,10,0,0.85);
     border:4px solid #6b4f2a;
@@ -54,7 +51,6 @@ body {
     align-items:center;
 }
 
-/* Botones de icono */
 .nav-buttons {
     display:flex;
     justify-content:center;
@@ -86,25 +82,15 @@ body {
     background: rgba(138,103,59,0.95);
 }
 
-/* Títulos centrados grandes */
 h1 { text-align:center; font-size:3rem; margin-bottom:20px; }
-h2 { text-align:center; border-bottom:1px solid #6b4f2a; padding-bottom:5px; font-size:2rem; }
-
-/* Texto y párrafo */
 p { font-size:1.2rem; text-align:center; line-height:1.6; }
-
-/* Imagen grande centrada */
 img.content-img { border-radius:15px; display:block; margin:auto; max-width:40%; height:auto; }
 
-/* ===========================
-   MEDIA QUERIES PARA MÓVIL
-   =========================== */
 @media (max-width: 768px) {
     .page { padding:20px; min-height:auto; width:95%; }
     h1 { font-size:2rem; margin-bottom:15px; }
-    h2 { font-size:1.5rem; }
     p { font-size:1rem; line-height:1.4; text-align:left; }
-    img.content-img { max-width:80%; height:auto; margin-bottom:15px; }
+    img.content-img { max-width:80%; margin-bottom:15px; }
     .icon-button { font-size:0.95rem; padding:8px 15px; }
     .icon-button img { width:30px; height:30px; margin-right:5px; }
     .nav-buttons { flex-direction:column; align-items:center; gap:10px; }
@@ -116,35 +102,33 @@ img.content-img { border-radius:15px; display:block; margin:auto; max-width:40%;
 <div id="FondoGIF"></div>
 
 <div class="container">
-
 <div class="page" id="Grimorio">
     <h1>ℕ𝔼ℂℝ𝕆𝕄𝔸ℕℂ𝕀𝔸</h1>
     <p>
-        Bajo los suburbios de una antigua ciudad decadente, cuyo nombre jamás sería revelado, habitó un médico de renombre, famoso por su talento inconfundible en el arte de la genética. Sus experimentos desafiaban los límites de la vida y la muerte, y su reputación se extendía como un susurro inquietante entre los pocos que conocían su verdadero poder. Cuando finalmente murió, todo su conocimiento y secretos más oscuros quedaron plasmados en un tomo prohibido, un Necronomicón que contenía las fórmulas, procedimientos y experimentos que habían transformado a simples mortales en criaturas más allá de la comprensión humana. Solo aquellos con una voluntad férrea y un intelecto temerario se atreverían a hojear sus páginas, sabiendo que cada palabra podía cambiar la esencia misma de la vida.
+        Bajo los suburbios de una antigua ciudad decadente, cuyo nombre jamás sería revelado, habitó un médico de renombre...
     </p>
-    <img src="/Sigva-Tales/book-darkhold.gif" class="content-img">
+    <img src="img/book-darkhold.gif" class="content-img">
 
     <div class="nav-buttons">
-        <a href="/Sigva-Tales/historia.html" class="icon-button">
-            <img src="/Sigva-Tales/img/book2.gif" alt="Historia">
+        <a href="historia.html" class="icon-button">
+            <img src="img/book2.gif" alt="Historia">
             <span>Historia</span>
         </a>
-        <a href="/Sigva-Tales/crisis.html" class="icon-button">
-            <img src="/Sigva-Tales/img/Creep2.gif" alt="Crisis">
+        <a href="crisis.html" class="icon-button">
+            <img src="img/Creep2.gif" alt="Crisis">
             <span>Crisis</span>
         </a>
-        <a href="/Sigva-Tales/genetica.html" class="icon-button">
-            <img src="/Sigva-Tales/img/alien_incubator.png" alt="Genética">
+        <a href="genética.html" class="icon-button">
+            <img src="img/alien_incubator.png" alt="Genética">
             <span>Genética</span>
         </a>
-        <a href="/Sigva-Tales/registros.html" class="icon-button">
-            <img src="/Sigva-Tales/img/paper-with-sidebar-plain.png" alt="Registros">
+        <a href="registros.html" class="icon-button">
+            <img src="img/paper-with-sidebar-plain.png" alt="Registros">
             <span>Registros</span>
         </a>
     </div>
 </div>
-
-</div> <!-- container -->
+</div>
 
 </body>
 </html>
